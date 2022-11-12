@@ -47,7 +47,7 @@ router.post("/create", async(req, res) => {
         return res.send("Weak password");
     } else {
         const tempuser = await User.findOne({ email: req.body.email });
-        if(tempuser != null) return res.send("User with this email already exists");
+        if(tempuser != null) return res.send("User with this email already exists. Please enter different mail id");
         await bcrypt.hash(req.body.password, saltRounds).then(function(hash) {
             tempPassword = hash;
            // console.log(hash);
@@ -109,7 +109,7 @@ router.delete("/delete", async(req, res) => {
                    // console.log("Result22");
                     const user = await User.findOneAndDelete({ email: req.body.email });
                     //console.log(user);
-                    res.send("Record Successfully Deleted");
+                    res.send("Deleted the user from database");
                 } catch (err) {
                     res.send(err);
                 }
