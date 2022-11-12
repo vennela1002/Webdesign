@@ -83,11 +83,11 @@ if(user) {
     const password1 = await bcrypt.hash(password, salt);
     const emailid = await User.find({email: req.body.email} )       
     const result = await User.findByIdAndUpdate(emailid,{email:email, fullname:fullname , password:password1});
-    res.send('Document has been updated');
+    res.send('User details are updated');
     return;
 }
 else {
-    res.status(400).send("User not found in Database");
+    res.status(400).send("Couldn't find the user");
 }
 
 });
@@ -120,7 +120,7 @@ router.delete("/delete", async(req, res) => {
     );
     } 
     else {
-        res.status(400).send("User not found in Database");
+        res.status(400).send("Couldn't find the user");
     }
 });
 
