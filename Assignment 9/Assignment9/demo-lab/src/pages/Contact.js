@@ -8,17 +8,17 @@ function Contact(){
       const contacts = [
         {
             id: 1,
-            name: "Harsha ",
+            name: "Vennela ",
             contact: 1111111111
         },
         {
             id: 2,
-            name: "Priyank",
+            name: "Bandla",
             contact: 2222222222 
         },
         {
             id: 3,
-            name: "Abhi",
+            name: "Ganesh",
             contact: 5555555555
         }
         
