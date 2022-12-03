@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FaCalendarAlt } from "react-icons/fa";
 import {
   BrowserRouter as Router,
   Route,
@@ -34,18 +35,20 @@ class hourWiseForecast extends React.Component {
           <div className="card py-2 my-3">
             <div className="row">
               <div className="col">
-                <h4 className="text-info">
-                  {moment(_date).format("MMMM D YYYY")}
-                </h4>
-                <h5>
-                  {this.props.data.day} at {moment(_date).format("HH:mm a")}
-                </h5>
-                <i className={_img}></i>
-                <p>{this.props.data.weather[0].description}</p>
-                <h5>Temperature: {farenheitTemp}°F</h5>
-                <p>
-                  Minimum:{fahrenheitMin}°F and Maximum: {fahrenheitMax}°F
-                </p>
+                <i> <h4 className="text-info">
+                   < FaCalendarAlt/> {moment(_date).format("MMMM D YYYY")}                 
+                </h4> </i>
+                <i> <h5>
+                  {moment(_date).format("HH:mm a")}
+                </h5> </i>
+                <i> <p>Temperature: {farenheitTemp}°F</p> </i>
+                <i> <p>
+                  {fahrenheitMin}°F low
+                </p> </i>
+                <i> <p>{fahrenheitMax}°F high
+                </p> </i>
+                <i> <p>{this.props.data.weather[0].description}</p> </i>
+                <i style={{width:"200px"}} className={_img}></i>
               </div>
             </div>
           </div>

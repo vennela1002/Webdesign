@@ -1,9 +1,3 @@
-The main requirements of the weather forecasting application using react:
-1. Displayed 5-day weather forecast of the city using different react components
-2. On clicking on the day it displays the city's hourly forecast.
-3. It also displays the foreacast of the day which is created using react router.
-
-
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -72,3 +66,9 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+In this application:
+    Using different react components, weather forecast of a city is diplayed for 5 days.
+    City's hourly forecast is displayed when clicked on its respective day
+    React router is used to display forecast of the day
+

@@ -25,14 +25,14 @@
 }
 
 .App-link {
-  color: #1A237E;
+  color: maroon;
 }
 
 a {
-  color: #000 !important;
+  color: maroon !important;
 }
 a:hover {
-   color: #1A237E !important;
+   color: maroon !important;
    text-decoration: none !important;
 }
 
@@ -45,7 +45,7 @@ a:hover {
 }
 
 .btn{
-  color: blue;
+  color: maroon;
 
 }
 

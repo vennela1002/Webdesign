@@ -11,7 +11,7 @@ class App extends React.Component {
         <div className="App">
           <Switch>
             <Route path="/" exact component={WeatherContainer} />
-            <Route path="/hourWiseForecast/:day" component={Hourly} />
+            <Route path="/hourly/:day" component={Hourly} />
           </Switch>
         </div>
       </Router>

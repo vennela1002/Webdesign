@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FaCalendarAlt } from "react-icons/fa";
 import {
   BrowserRouter as Router,
   Route,
@@ -23,6 +24,7 @@ class WeatherData extends React.Component {
     const weekday = this.props.reading.dt * 1000;
     _date.setTime(weekday);
     const _img = `owf owf-${this.props.reading.weather[0].id} owf-5x`;
+    const url = `http://openweathermap.org/img/${this.props.icon}.png`;
     const fahrenheitMax = this.props.reading.main.temp_max;
 
     const fahrenheitMin = this.props.reading.main.temp_min;
@@ -35,7 +37,7 @@ class WeatherData extends React.Component {
         <div className="col-12">
           <Link
             to={{
-              pathname: `/hourWiseForecast/${this.props.reading.day}`,
+              pathname: `/hourly/${this.props.reading.day}`,
               state: {
                 completeData: this.props.completeData,
                 cityName: this.props.cityName,
@@ -45,16 +47,18 @@ class WeatherData extends React.Component {
             <div className="card py-2 mt-3">
               <div className="row">
                 <div className="col">
-                  <h4 className="text-info">
-                    {moment(_date).format("MMMM D YYYY")}
-                  </h4>
-                  <h5>{this.props.reading.day}</h5>
+                  <i><h4 className="text-info">
+                  < FaCalendarAlt/> {moment(_date).format("MMMM D YYYY")} {this.props.reading.day}
+                  </h4></i>
                   <i className={_img}></i>
-                  <p>{this.props.reading.weather[0].description}</p>
                   <h5>Temperature: {farenheitTemp}°F</h5>
-                  <p>
-                    Minimum: {fahrenheitMin}°F and Maximum: {fahrenheitMax}°F
-                  </p>
+                  <i><h6>
+                    {fahrenheitMin}°F  low
+                  </h6></i>
+                  <i><h6> {fahrenheitMax}°F high
+                  </h6></i>
+                  <i><p>{this.props.reading.weather[0].description}</p></i>
+                  
                 </div>
               </div>
             </div>

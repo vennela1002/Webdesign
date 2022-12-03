@@ -17,10 +17,10 @@ class Hourly extends React.Component {
   render() {
     return (
       <div className="container">
-        <h4 className="py-3">
+        <i><h1 className="py-3">
           {" "}
-          {this.completeData.cityName} {this._selectedParam.day} Report
-        </h4>
+          {this.completeData.cityName} Weather on {this._selectedParam.day}
+        </h1> </i>
         <div className="justify-content-center m-2">
           {this.displayHourlyData()}
         </div>
